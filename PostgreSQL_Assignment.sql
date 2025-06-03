@@ -42,14 +42,13 @@ VALUES
     (3, 3, 'Bamboo Grove East', '2024-05-15 09:10:00', 'Feeding observed'),
     (1, 2, 'Snowfall Pass', '2024-05-18 18:30:00 ', NULL);
 
-
 -- problem 1
 
 INSERT INTO rangers (name, region)
 VALUES
     ('Derek Fox', 'Coastal Plains');
 
--- problrm 2
+-- problem 2
 
 SELECT count(DISTINCT species_id) as unique_species_count from sightings;
 
@@ -64,5 +63,4 @@ SELECT name, count(*) total_sightings  FROM sightings
     JOIN rangers USING(ranger_id)
         GROUP BY name;
 
--- problem 5
 
