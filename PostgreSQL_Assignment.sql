@@ -94,6 +94,13 @@ SELECT sighting_id,
         AS time_of_day FROM sightings;
 
 
+-- problem 9
+
+DELETE FROM rangers
+    WHERE ranger_id = (SELECT ranger_id FROM rangers
+        FULL JOIN sightings USING(ranger_id)
+            WHERE sighting_id IS NULL);
+
         
 
 
