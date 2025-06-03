@@ -69,4 +69,15 @@ SELECT common_name FROM species
     FULL JOIN sightings USING(species_id)
         WHERE sighting_id is NULL
 
+-- Problem 6
+
+SELECT common_name, sighting_time, name FROM species
+     JOIN sightings USING(species_id)
+        JOIN rangers USING(ranger_id)
+            ORDER BY sighting_time DESC
+                LIMIT 2;
+
+
+        
+
 
